@@ -5,6 +5,7 @@ function loadContent(page, pushState = true) {
         if (xhr.status === 200) {
             document.getElementById('content').innerHTML = xhr.responseText;
             addHeader(page);
+            updateHeaderStyle(page);
             
             // Modifier l'URL sans recharger la page
             if (pushState) {
@@ -14,15 +15,23 @@ function loadContent(page, pushState = true) {
         } else {
             // Rediriger vers la page de présentation avec une alerte
             alert("Cette page n'existe pas ou est mal orthographiée, vous revoici à l'accueil.");
-            loadContent('presentation', false); // Assurez-vous de ne pas empiler les états
+            loadContent('acceuil', false); // Assurez-vous de ne pas empiler les états
         }
     };
     xhr.onerror = function() {
         // Gérer les erreurs de réseau
         alert("Erreur de chargement du contenu, vous revoici à l'accueil.");
-        loadContent('presentation', false); // Assurez-vous de ne pas empiler les états
+        loadContent('acceuil', false); // Assurez-vous de ne pas empiler les états
     };
     xhr.send();
+}
+
+function updateHeaderStyle(page) {
+    var header = document.querySelector('header');
+    // Supprimer toutes les classes spécifiques aux pages
+    header.classList.remove('header-acceuil', 'header-regles', 'header-scenarios', 'header-materiel');
+    // Ajouter la classe spécifique à la page actuelle
+    header.classList.add('header-' + page);
 }
 
 window.onpopstate = function(event) {
@@ -33,7 +42,7 @@ window.onpopstate = function(event) {
 
 // Charger la dernière page affichée à partir de localStorage ou de l'URL lors du chargement initial
 document.addEventListener('DOMContentLoaded', function() {
-    var currentPage = localStorage.getItem('currentPage') || location.hash.slice(1) || 'presentation';
+    var currentPage = localStorage.getItem('currentPage') || location.hash.slice(1) || 'acceuil';
     loadContent(currentPage, false);
 });
 

@@ -1,3 +1,43 @@
 body {
-    background-color: rgb(230, 230, 134);
+    background-color:#adcde6;
 }
+
+.intro  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    padding: 0 10vw 0 10vw;
+}
+
+.part1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    padding: 0 10vw 0 10vw;
+}
+
+    .text1{
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .bouton_triangle{
+        width: 20vw;
+        cursor: pointer;
+    }
+    .paysageJDR {
+        width: 30vw;
+    }
+
+    .insertImg {
+        display: flex;
+        gap: 1vw;
+    }
+
+    .scenario_boutton {
+        cursor: pointer;
+        color: #55802a;
+    }
