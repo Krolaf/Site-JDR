@@ -1,17 +1,41 @@
-function loadContent(page) {
+function loadContent(page, pushState = true) {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'pages/' + page + '.html', true);
     xhr.onload = function() {
         if (xhr.status === 200) {
             document.getElementById('content').innerHTML = xhr.responseText;
-            // Ajouter le header avec les liens CSS et JS spécifiques
             addHeader(page);
+            
+            // Modifier l'URL sans recharger la page
+            if (pushState) {
+                history.pushState({page: page}, null, '#' + page);
+                localStorage.setItem('currentPage', page); // Sauvegarder l'état actuel
+            }
         } else {
-            document.getElementById('content').innerHTML = '<p>Erreur de chargement du contenu</p>';
+            // Rediriger vers la page de présentation avec une alerte
+            alert("Cette page n'existe pas ou est mal orthographiée, vous revoici à l'accueil.");
+            loadContent('presentation', false); // Assurez-vous de ne pas empiler les états
         }
+    };
+    xhr.onerror = function() {
+        // Gérer les erreurs de réseau
+        alert("Erreur de chargement du contenu, vous revoici à l'accueil.");
+        loadContent('presentation', false); // Assurez-vous de ne pas empiler les états
     };
     xhr.send();
 }
+
+window.onpopstate = function(event) {
+    if (event.state && event.state.page) {
+        loadContent(event.state.page, false);
+    }
+};
+
+// Charger la dernière page affichée à partir de localStorage ou de l'URL lors du chargement initial
+document.addEventListener('DOMContentLoaded', function() {
+    var currentPage = localStorage.getItem('currentPage') || location.hash.slice(1) || 'presentation';
+    loadContent(currentPage, false);
+});
 
 function addHeader(page) {
     // Supprimer les anciens liens CSS et scripts JS si présents
