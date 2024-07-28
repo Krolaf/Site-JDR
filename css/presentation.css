@@ -41,3 +41,53 @@ body {
         cursor: pointer;
         color: #55802a;
     }
+
+    .part2 {
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        padding: 0 10vw 0 10vw;
+        gap:3vw;
+    }
+
+        .ballon{
+            width: 19vw;
+        }
+
+        .text2 {
+            width: 55vw;
+            height: 38.5vh;
+            align-items: center;
+            text-align: justify;
+
+        }
+
+        
+        .text3 {
+            width: 55vw;
+            height: 38.5vh;
+            align-items: center;
+            text-align: justify;
+        }
+        
+        .part3 {
+            display: flex;
+            align-items: center;
+            text-align: justify;
+            padding: 0 10vw 0 10vw;
+            gap:6vw;
+        }
+        
+        .book {
+            width: 16vw;
+        }
+        .text4 {
+            width: 35vw;
+        }
+        .usine {
+            width: 16vw;
+        }
+        .regles_boutton {
+            cursor: pointer;
+            color: #792a2a;
+        }
