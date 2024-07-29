@@ -11,15 +11,25 @@ header {
     user-select: none;
 }
 
+header p {
+    font-size: 1.6vw;
+    cursor: pointer;
+}
+
+
 h1 , h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 1.8vw;
+    font-size: 1.4vw;
+}
+
+.contact {
+    width: 6vw;
 }
 
 p {
     font-size: 1vw;
 }
-.header-acceuil {
+.header-acceuil , .header-contact{
     background: linear-gradient(to bottom, #d2b394 35%, #a48464 100%);
 }
 

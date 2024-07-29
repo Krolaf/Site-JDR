@@ -51,43 +51,51 @@ body {
     }
 
         .ballon{
-            width: 19vw;
+            width: 22vw;
         }
 
         .text2 {
-            width: 55vw;
+            width: 25vw;
             height: 38.5vh;
             align-items: center;
             text-align: justify;
 
+        }
+        .group1 {
+            display: flex;
+            flex-direction: row;
+            gap: 4vw;
         }
 
         
         .text3 {
-            width: 55vw;
+            width: 25vw;
             height: 38.5vh;
             align-items: center;
             text-align: justify;
+            
         }
         
         .part3 {
             display: flex;
             align-items: center;
-            text-align: justify;
+            text-align: center;
+            justify-content: center;
             padding: 0 10vw 0 10vw;
-            gap:6vw;
+            gap:11vw;
         }
         
         .book {
-            width: 16vw;
+            width: 22vw;
         }
         .text4 {
-            width: 35vw;
+            width: 54vw;
         }
         .usine {
-            width: 16vw;
+            width: 22vw;
         }
         .regles_boutton {
             cursor: pointer;
             color: #792a2a;
+            width: 6vw;
         }
