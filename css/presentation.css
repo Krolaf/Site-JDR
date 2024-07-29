@@ -87,12 +87,14 @@ body {
         
         .book {
             width: 22vw;
+            padding-bottom: 1.5vh;
         }
         .text4 {
             width: 54vw;
         }
         .usine {
             width: 22vw;
+            padding-bottom: 1.5vh;
         }
         .regles_boutton {
             cursor: pointer;

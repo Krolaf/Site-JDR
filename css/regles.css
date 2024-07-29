@@ -1,3 +1,45 @@
 body {
     background-color: #d28686;
 }
+
+.section_regles {
+    display: flex;
+    padding: 0 10vw 0 10vw;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+}
+
+.section_dice {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+    .left_dice {
+        width: 100%;
+        display: flex;
+        gap: 4vw;
+    }
+    .left1{
+        width: 34vw;
+    }
+    .dice_roll{
+        width: 45vw;
+        height: 40vh;
+    }
+
+    .liens {
+        display: flex;
+        justify-content: center;
+    }
+    .link {
+        display: flex;
+        width: 100%;
+        gap: 6vw;
+        padding-bottom: 2vh;
+        align-items: center;
+    }
+
+    .fiche {
+        width: 20vw;
+    }
